@@ -13,14 +13,18 @@
 class AdHocSquare 
 {
 public:
-AdHocSquare(double side); void set_side(double side); double get_area();
+    AdHocSquare(double side); 
+    void set_side(double side); 
+    double get_area();
 private:
-double side;
+    double side;
 };
 
 class LazySquare {
 public:
-AdHocSquare(double side); void set_side(double side); double get_area();
+    AdHocSquare(double side); 
+    void set_side(double side); 
+    double get_area();
 private: 
     double side;
     double area;
@@ -35,7 +39,9 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-
+    AdHocSquare newSquare;
+   
+    
     return 0;
 }
 
