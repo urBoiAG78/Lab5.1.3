@@ -23,6 +23,7 @@ public:
     string pName;
     int pPrice;
     int orderList;
+    int oQuantity;
     void setName(string name)
     {
         name = pName;
@@ -31,12 +32,17 @@ public:
     {
       price = pPrice;  
     }
+    
     void addToList()
     {
         orderList++;
-        total = total + pPrice;
+        total = total + (pPrice * oQuantity);
     };
     
+    void setQuantity (int quantity)
+    {
+      quantity =  oQuantity;  
+    }
     
     
     
@@ -52,13 +58,24 @@ public:
 int main(int argc, char** argv) {
     string product;
     int num;
+    string yon;
+    
     ShopItemOrder ShoppinTime;
     cout << "Enter the name of the product"<< endl;
     cin >> product >> endl;
     ShoppinTime.setName(product);
+    
     cout << "What is the price of " + ShoppinTime.pName + "?" << endl;
     cin >> num >> endl;
     ShoppinTime.setPrice(num);
+    
+    cout << "How many of this product?" << endl;
+    cin >> num >> endl;
+    ShoppinTime.setQuantity(num);
+    
+    
+    
+    
     return 0;
 }
 
