@@ -7,7 +7,7 @@
 * File: main.cpp
 * Author: agonzalez
 *
-* Created on September 29, 2017, 12:45 PM
+* Created on September 25, 2017, 2:11 PM
 */
 #include <cstdlib>
 #include <math.h>
@@ -26,7 +26,9 @@ class LazySquare
 public:
 LazySquare(double side){this->side = side; area = side*side;}
 void set_side(double side){side_changed = true; this->side = side;}
-double get_area(){if(side_changed == false){return area;}else{return side*side;}}
+double get_area(){if(side_changed == false)
+{return area;}
+else{return side*side;}}
 private:
 double side;
 double area;
