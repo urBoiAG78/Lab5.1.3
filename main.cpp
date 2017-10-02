@@ -11,71 +11,59 @@
  * Created on September 27, 2017, 12:52 PM
  */
 
+#include <cstdlib>
 #include <iostream>
-#include <string>
 using namespace std;
 
-class ShopItemOrder
-{
+class ShopItemOrder{
 private:
-    int total;
+    string itemName;
+    double price;
+    unsigned int quantity;
 public:
-    string pName;
-    int pPrice;
-    int orderList;
-    int oQuantity;
-    void setName(string name)
+    
+    ShopItemOrder(void) 
     {
-        name = pName;
-    }
-    void setPrice (int price)
-    {
-      price = pPrice;  
+        
     }
     
-    void addToList()
+    ShopItemOrder(string itemName, double price, unsigned int quantity) 
     {
-        orderList++;
-        total = total + (pPrice * oQuantity);
-    };
-    
-    void setQuantity (int quantity)
-    {
-      quantity =  oQuantity;  
+        itemName = itemName;
+        price = price;
+        quantity = quantity;
     }
     
+
+    string getName(void){return itemName;}
+    void setName(string name){itemName = name;}
     
+    double getPrice(void){return price;}
+    void setPrice(double price){price = price;}
     
+    int getQuantity(void){return quantity;}
+    void setQuantity(unsigned int quantity){quantity = quantity;}
     
 };
 
-
-
-
-/*
- * 
- */
-int main(int argc, char** argv) {
-    string product;
-    int num;
-    string yon;
-    
-    ShopItemOrder ShoppinTime;
-    cout << "Enter the name of the product"<< endl;
-    cin >> product >> endl;
-    ShoppinTime.setName(product);
-    
-    cout << "What is the price of " + ShoppinTime.pName + "?" << endl;
-    cin >> num >> endl;
-    ShoppinTime.setPrice(num);
-    
-    cout << "How many of this product?" << endl;
-    cin >> num >> endl;
-    ShoppinTime.setQuantity(num);
-    
-    
-    
-    
+int main(void) {
+    double totalPrice = 0;
+    ShopItemOrder item1("Apples", 0.69, 2);
+    ShopItemOrder item2("Pineapple", 1.99, 15);
+    ShopItemOrder item3("Watermelon", 9.99, 5);
+    ShopItemOrder vector[] = {item1, item2, item3};
+    cout << " Item Name   Quantity   Price" << endl;
+    for(ShopItemOrder loop: vector)
+    {
+        cout << "  " << loop.getName();
+        cout << "        ";
+        cout << loop.getQuantity();
+        cout << "        ";
+        cout << loop.getPrice() << endl;
+        totalPrice += loop.getPrice() * loop.getQuantity();
+    }
+    cout << endl;
+    cout << "Your total is: " << totalPrice;
+    cout << endl;
     return 0;
 }
-
