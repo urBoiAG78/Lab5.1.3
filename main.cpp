@@ -22,10 +22,6 @@ private:
     unsigned int quantity;
 public:
     
-    ShopItemOrder(void) 
-    {
-        
-    }
     
     ShopItemOrder(string itemName, double price, unsigned int quantity) 
     {
@@ -48,11 +44,11 @@ public:
 
 int main(void) {
     double totalPrice = 0;
-    ShopItemOrder item1("Apples", 0.69, 2);
-    ShopItemOrder item2("Pineapple", 1.99, 15);
-    ShopItemOrder item3("Watermelon", 9.99, 5);
-    ShopItemOrder vector[] = {item1, item2, item3};
-    cout << " Item Name   Quantity   Price" << endl;
+    ShopItemOrder product1("Apples", 0.69, 2);
+    ShopItemOrder product2("Pineapple", 1.99, 15);
+    ShopItemOrder product3("Watermelon", 9.99, 5);
+    ShopItemOrder vector[] = {product1, product2, product3};
+    cout << "Product Name   Quantity   Price" << endl;
     for(ShopItemOrder loop: vector)
     {
         cout << "  " << loop.getName();
