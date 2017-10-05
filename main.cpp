@@ -12,31 +12,44 @@
 #include <cstdlib>
 #include <math.h>
 #include <iostream>
+
 using namespace std;
-class AdHocSquare {
-public:
-AdHocSquare(double side){this->side = side;}
-void set_side(double side){this->side = side;}
-double get_area(){return side*side;}
+
+class AdHocSquare 
+{
 private:
-double side;
+double sSide;
+public:
+AdHocSquare(double side){side = sSide;}
+    void set_side(double side){
+        side = sSide;
+    }
+    double get_area(){
+        return sSide*sSide;
+    }
 };
+
 class LazySquare
 {
-public:
-LazySquare(double side){this->side = side; area = side*side;}
-void set_side(double side){side_changed = true; this->side = side;}
-double get_area(){if(side_changed == false)
-{return area;}
-else{return side*side;}}
 private:
-double side;
-double area;
+double sSide;
+double sArea;
 bool side_changed;
+
+public:
+LazySquare(double side){
+    sSide = side; 
+    sArea = sSide*sSide;
+}
+void set_side(double side){
+    side_changed = true; 
+    sSide = side;}
+        double get_area(){if(side_changed == false)
+{return sArea;}
+else{return sSide*sSide;}}
+
 };
-/*
-*
-*/
+
 int main(int argc, char** argv) {
 AdHocSquare adHocSQ(15);
 adHocSQ.set_side(10);
