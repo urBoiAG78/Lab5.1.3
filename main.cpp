@@ -57,7 +57,8 @@ return sSide*sSide;
 
 };
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv) 
+{
 AdHocSquare adHocSQ(15);
 adHocSQ.set_side(10);
 cout << adHocSQ.get_area() << endl;
