@@ -44,9 +44,16 @@ LazySquare(double side){
 void set_side(double side){
     side_changed = true; 
     sSide = side;}
-        double get_area(){if(side_changed == false)
-{return sArea;}
-else{return sSide*sSide;}}
+    double get_area(){if(side_changed == false)
+{
+    return sArea;
+}
+
+ else{
+return sSide*sSide;
+}
+    
+}
 
 };
 
