@@ -23,7 +23,7 @@ double sSide;
 public:
 AdHocSquare(double side){side = sSide;}
     void set_side(double side){
-        side = sSide;
+    sSide  =  side ;
     }
     double get_area(){
         return sSide*sSide;
@@ -45,10 +45,13 @@ LazySquare(double side){
 void set_side(double side){
     side_changed = true; 
     sSide = side;}
-    double get_area(){if(side_changed == false)
-    {
-    return sArea;
-    }
+
+double get_area()
+{
+    if(side_changed == false)
+{
+return sArea;
+}
 
 else{
 return sSide*sSide;
@@ -62,7 +65,7 @@ int main(int argc, char** argv)
 {
 
 
-AdHocSquare adHocSQ(15);
+AdHocSquare adHocSQ(12);
 adHocSQ.set_side(10);
 cout << adHocSQ.get_area() << endl;
 
